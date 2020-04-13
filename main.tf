@@ -427,7 +427,7 @@ resource "aws_emr_cluster" "default" {
   tags = module.label.tags
 
   lifecycle {
-    ignore_changes = var.emr_lifecycle_ignore_changes
+    ignore_changes = ["kerberos_attributes", "step", configurations_json["hive_configuration"][0]["Properties"]["javax.jdo.option.ConnectionPassword"] ]
   }
 }
 
