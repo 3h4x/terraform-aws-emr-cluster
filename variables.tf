@@ -335,3 +335,10 @@ variable "bootstrap_action" {
   description = "List of bootstrap actions that will be run before Hadoop is started on the cluster nodes"
   default     = []
 }
+
+variable "emr_lifecycle_ignore_changes" {
+  type = list(string)
+  description = "emr_lifecycle_ignore_changes"
+  default     = ["kerberos_attributes", "step"]
+}
+
